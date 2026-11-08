@@ -1,0 +1,357 @@
+/* Styles for cv.html, printed to benjamin-desmedt-cv.pdf (A4) by scripts/build-cv-pdf.sh */
+:root {
+  --dark-color: #232425;
+  --darker-color: #181920;
+  --darkest-color: #111213;
+  --orange-color: #e78d05;
+  --transparant-white: rgba(255, 255, 255, .5);
+  --text-color: #e6e6e6;
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/Ubuntu-Light.ttf");
+}
+@font-face {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/Ubuntu-Medium.ttf");
+}
+@font-face {
+  font-family: "Ubuntu";
+  font-style: italic;
+  font-weight: 300;
+  src: url("../fonts/Ubuntu-LightItalic.ttf");
+}
+@font-face {
+  font-family: "Inconsolata Extra Expanded Light";
+  src: url("../fonts/Inconsolata-ExtraExpandedLight.ttf");
+}
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--darkest-color);
+  color: var(--text-color);
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+  font-size: 9.5pt;
+  line-height: 1.4;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+strong {
+  font-weight: 500;
+}
+
+.accent {
+  color: var(--orange-color);
+}
+
+/* One fixed A4 sheet per section */
+.page {
+  width: 210mm;
+  height: 297mm;
+  overflow: hidden;
+  margin: 10mm auto;
+  background: var(--dark-color);
+  box-shadow: 0 0 12px rgba(0, 0, 0, .6);
+  break-after: page;
+  page-break-after: always;
+  display: flex;
+  flex-direction: column;
+}
+
+.page:last-child {
+  break-after: auto;
+  page-break-after: auto;
+}
+
+/* Header */
+.cv-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--darker-color);
+  border-top: 2mm solid var(--orange-color);
+  border-bottom: 0.6mm solid var(--orange-color);
+  padding: 8mm 14mm 7mm;
+}
+
+.cv-header h1 {
+  margin: 0 0 4mm;
+  font-weight: 500;
+  font-size: 24pt;
+  letter-spacing: .5pt;
+  color: #fff;
+}
+
+.contact {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 10mm;
+  row-gap: 1.3mm;
+  font-size: 9.5pt;
+}
+
+.contact li {
+  display: flex;
+  align-items: center;
+  gap: 2.5mm;
+}
+
+.contact a {
+  text-decoration: underline;
+  text-decoration-color: var(--orange-color);
+  text-decoration-thickness: .25mm;
+  text-underline-offset: .8mm;
+}
+
+.contact a:hover,
+.contact a:focus-visible {
+  color: var(--orange-color);
+  outline: none;
+}
+
+.contact svg {
+  width: 4mm;
+  height: 4mm;
+  fill: var(--orange-color);
+  flex-shrink: 0;
+}
+
+.avatar {
+  width: 34mm;
+  height: 34mm;
+}
+
+.cv-header.slim {
+  padding: 4mm 14mm;
+  justify-content: flex-end;
+  gap: 4mm;
+}
+
+.slim-name {
+  font-weight: 500;
+  font-size: 14pt;
+  color: #fff;
+}
+
+.avatar.small {
+  width: 11mm;
+  height: 11mm;
+}
+
+/* Columns */
+.columns {
+  flex: 1;
+  display: flex;
+  gap: 9mm;
+  padding: 7mm 14mm 8mm;
+}
+
+.col {
+  flex: 1;
+  min-width: 0;
+}
+
+.col.wide {
+  flex: 1.45;
+}
+
+.col.narrow {
+  flex: 1;
+}
+
+/* Code-style blocks */
+.block {
+  margin-bottom: 5.5mm;
+  break-inside: avoid;
+}
+
+.block h2 .icon {
+  width: 4.6mm;
+  height: 4.6mm;
+  margin-right: 2mm;
+  vertical-align: -0.6mm;
+  fill: #fff;
+}
+
+.block h2 {
+  margin: 0 0 2.5mm;
+  font-weight: 500;
+  font-size: 13pt;
+  color: var(--orange-color);
+}
+
+.brace {
+  color: #fff;
+  font-weight: 500;
+}
+
+.brace.close {
+  display: block;
+  font-size: 13pt;
+  margin-top: 1.5mm;
+}
+
+.comment {
+  white-space: nowrap;
+  font-family: "Inconsolata Extra Expanded Light", monospace;
+  font-size: 9pt;
+  color: var(--transparant-white);
+  font-weight: 300;
+}
+
+.block p {
+  margin: 0 0 1.5mm 4mm;
+}
+
+.block p.note {
+  color: var(--transparant-white);
+  font-style: italic;
+}
+
+.tags {
+  line-height: 1.6;
+}
+
+ul.squares {
+  list-style: square;
+  margin: 0;
+  padding-left: 8mm;
+}
+
+ul.squares li {
+  margin-bottom: 1.2mm;
+}
+
+ul.squares li::marker {
+  color: var(--orange-color);
+}
+
+/* Human languages */
+table.languages {
+  margin-left: 4mm;
+  border-collapse: collapse;
+}
+
+table.languages td {
+  padding: .8mm 0;
+  font-family: "Inconsolata Extra Expanded Light", monospace;
+}
+
+table.languages td:first-child {
+  width: 32mm;
+}
+
+.bar {
+  display: block;
+  width: 36mm;
+  height: 3mm;
+  border: .3mm solid #fff;
+  padding: .4mm;
+}
+
+.bar span {
+  display: block;
+  height: 100%;
+  background: repeating-linear-gradient(90deg, #fff 0 1.6mm, transparent 1.6mm 2.1mm);
+}
+
+/* Experience */
+ol.experience {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 4mm;
+}
+
+.job {
+  margin-bottom: 4mm;
+  break-inside: avoid;
+}
+
+.job h3 {
+  margin: 0;
+  font-weight: 500;
+  font-size: 10.5pt;
+  color: #fff;
+}
+
+.job .at {
+  color: var(--orange-color);
+  font-weight: 300;
+}
+
+.job .period {
+  margin: .3mm 0 1.2mm;
+  font-family: "Inconsolata Extra Expanded Light", monospace;
+  font-size: 8.5pt;
+  color: var(--transparant-white);
+}
+
+.job p {
+  margin-left: 0;
+}
+
+.job ul.squares {
+  padding-left: 4mm;
+}
+
+/* Education */
+ul.education {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 4mm;
+}
+
+ul.education li {
+  margin-bottom: 2.5mm;
+}
+
+ul.education span {
+  display: block;
+  font-size: 8.5pt;
+  color: var(--transparant-white);
+}
+
+img.timeline {
+  display: block;
+  width: 100%;
+  margin-top: 2mm;
+}
+
+@media print {
+  body {
+    background: var(--dark-color);
+  }
+
+  .page {
+    margin: 0;
+    box-shadow: none;
+  }
+}
