@@ -160,6 +160,18 @@ article header .single-line {
 #languages h2 {
   margin-top: 1em;
 }
+#languages ul.skills {
+  display: inline-block;
+  text-align: left;
+  list-style-type: square;
+  max-width: 80%;
+  margin-bottom: 1.5em;
+}
+#languages ul.skills li {
+  font-size: 0.8em;
+  line-height: 1.5;
+  margin-bottom: 0.4em;
+}
 #languages img.lingo {
   height: 12em;
   width: auto;
@@ -315,7 +327,8 @@ footer.foot span {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  #general ul li {
+  #general ul li,
+  #languages ul.skills li {
     font-size: 1em;
   }
 }
@@ -394,7 +407,8 @@ footer.foot span {
     grid-template-columns: repeat(5, 1fr);
   }
 
-  #general ul li {
+  #general ul li,
+  #languages ul.skills li {
     font-size: 1.2em;
   }
 }

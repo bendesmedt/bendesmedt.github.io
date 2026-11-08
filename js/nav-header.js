@@ -1,8 +1,8 @@
 class NavigationHeader extends HTMLElement {
     connectedCallback() {
         const curr = this.getAttribute('current');
-        const menu_items = ['about', 'toolkit', /*'résumé',*/ 'contact'];
-        const menu_src = ['about.html', 'toolkit.html',/*'info.html',*/'contact.html'];
+        const menu_items = ['about', 'toolkit', 'contact'];
+        const menu_src = ['about.html', 'toolkit.html', 'contact.html'];
         let html_menu = '';
 
         for (let i = 0; i < menu_items.length; i++) {
@@ -27,7 +27,7 @@ class NavigationHeader extends HTMLElement {
             '    </a>\n' +
             '    <ul class="links">\n' +
             html_menu +
-            '    </ul>\n    <a href="./bendesmedt_javadev_resume_XP_1221.pdf" download title="Donwload my resume"><img' +
+            '    </ul>\n    <a href="./benjamin-desmedt-cv.pdf" download title="Download my resume"><img' +
             ' class="dl-button"' +
             ' src="../images/download.png" \n                                                     alt="download button"/></a>\n' +
             '<style>\n' +
