@@ -187,6 +187,20 @@ article {
     margin-top: 1em;
   }
 
+  ul.skills {
+    display: inline-block;
+    text-align: left;
+    list-style-type: square;
+    max-width: 80%;
+    margin-bottom: 1.5em;
+
+    li {
+      font-size: .8em;
+      line-height: 1.5;
+      margin-bottom: .4em;
+    }
+  }
+
   img.lingo {
     height: 12em;
     width: auto;
@@ -386,7 +400,8 @@ footer.foot {
   }
 
   //GENERAL
-  #general ul li {
+  #general ul li,
+  #languages ul.skills li {
     font-size: 1em;
   }
 }
@@ -507,7 +522,8 @@ footer.foot {
   }
 
   //GENERAL
-  #general ul li {
+  #general ul li,
+  #languages ul.skills li {
     font-size: 1.2em;
   }
 }
